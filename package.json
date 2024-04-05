@@ -14,6 +14,8 @@
     "framer-motion": "^11.0.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.8.1",
+    "react-router-dom": "^6.22.3",
     "react-swiper": "^0.1.5",
     "swiper": "^11.1.0"
   },

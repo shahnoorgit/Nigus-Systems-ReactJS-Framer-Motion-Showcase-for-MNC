@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const FeaturesSection = () => {
   const features = [
@@ -38,29 +39,37 @@ const FeaturesSection = () => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 p- cursor-pointer">
           {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white rounded-lg overflow-hidden shadow-md"
-            >
-              <img
-                src={feature.image}
-                alt={feature.title}
-                className="w-15 h-15"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-700">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                  commodo nibh nec risus consequat tincidunt.
-                </p>
-              </div>
-            </motion.div>
+            <FeatureCard key={index} feature={feature} />
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+const FeatureCard = ({ feature }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger the animation only once
+    threshold: 0.5, // Percentage of the card visible before triggering
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5 }}
+      className="bg-white rounded-lg overflow-hidden shadow-md"
+    >
+      <img src={feature.image} alt={feature.title} className="w-15 h-15" />
+      <div className="p-4">
+        <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+        <p className="text-gray-700">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce commodo
+          nibh nec risus consequat tincidunt.
+        </p>
+      </div>
+    </motion.div>
   );
 };
 

@@ -1,18 +1,16 @@
-import ImageWithSideText from "./components/Callsection";
-import OurClientsSection from "./components/Clients";
-import FeaturesSection from "./components/Features";
-import HeroSection from "./components/Hero";
-import HomeFooter from "./components/HomeFooter";
 import Navbar from "./components/Navbar";
-
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import HomeFooter from "./components/HomeFooter";
+import WebDev from "./pages/WebDev";
 function App() {
   return (
     <>
       <Navbar />
-      <HeroSection />
-      <OurClientsSection />
-      <FeaturesSection />
-      <ImageWithSideText />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services/web_dev" element={<WebDev />} />
+      </Routes>
       <HomeFooter />
     </>
   );

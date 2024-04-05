@@ -4,7 +4,7 @@ const HomeFooter = () => {
   return (
     <footer className="footer p-10 bg-neutral text-neutral-content">
       <aside>
-        <img className="w-15 h-11" src="./nigus-logo.png" />
+        <img className="w-15 h-11" src="/nigus-logo.png" />
         <p className=" text-white">
           ACME Industries Ltd.
           <br />
