@@ -13,7 +13,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative bg-gray-900 text-white py-24">
+    <div className="relative bg-gray-900 h-screen flex max-sm:h-full text-white py-24">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-5">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -34,19 +34,12 @@ const HeroSection = () => {
         </motion.div>
         <div className="w-full max-w-md md:w-1/2">
           <motion.img
-            key={currentSlide}
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            src={
-              currentSlide === 0
-                ? "./image1.avif"
-                : currentSlide === 1
-                ? "image2.svg"
-                : "image3.jpg"
-            }
+            src="/Hero3.gif"
             alt="Slide"
-            className="w-full h-full max-h-[600px] rounded-lg"
+            className="w-full h-full  rounded-lg"
           />
         </div>
       </div>

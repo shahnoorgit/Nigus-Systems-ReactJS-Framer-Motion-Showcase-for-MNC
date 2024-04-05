@@ -6,7 +6,7 @@ const ImageWithSideText = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-1/2">
           <img
-            src="./confrence.png"
+            src="/Hero.gif"
             alt="Description"
             className="w-full h-auto rounded-lg shadow-md"
           />

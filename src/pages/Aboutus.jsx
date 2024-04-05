@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TestimonialSection from "../components/Testomonial";
+import CompanyStats from "../components/Companystats";
 
 // Define an array of objects containing technology names and their corresponding image paths
 const technologies = [
@@ -24,9 +25,12 @@ const AboutPage = () => {
   return (
     <>
       <div className=" mt-10 p-5">
+        <center className=" text-white text-3xl mt-5">
+          <h1>About Us</h1>
+        </center>
         <div className="flex flex-wrap items-center justify-between p-10">
           <motion.img
-            src="/about.jpg"
+            src="/aboutgif2.gif"
             alt="Hero Image"
             className="w-25 md:w-[600px] rounded"
             initial={{ opacity: 0, y: 20 }}
@@ -62,44 +66,51 @@ const AboutPage = () => {
             </motion.p>
           </motion.header>
         </div>
-
-        <section className="bg-gray-200 py-12" ref={ref}>
-          <div className="container mx-auto">
-            <motion.h2
-              className="text-2xl font-bold mb-4 text-center"
+        <div className=" p-5">
+          <div className="flex flex-wrap items-center justify-between p-10">
+            <motion.header
+              className="bg-gray-900 text-white py-8 text-center w-full md:w-1/2 x-5"
               initial={{ opacity: 0, y: -20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeIn" }}
             >
-              Technologies We Work With
-            </motion.h2>
-            <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5">
-              {/* Mapping through technologies and displaying technology name along with its image */}
-              {technologies.map((tech, index) => (
-                <motion.li
-                  key={index}
-                  className="bg-white p-4 rounded-lg shadow-lg text-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.5, ease: "easeIn" }}
-                >
-                  <img
-                    src={tech.image}
-                    alt={tech.name}
-                    className="w-20 h-20 mx-auto mb-2"
-                  />
-                  <p>{tech.name}</p>
-                </motion.li>
-              ))}
-            </ul>
+              <motion.h1
+                className="text-4xl font-bold"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Industries
+              </motion.h1>
+              <motion.p
+                className="mt-4"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
+              >
+                At Nigus Systems, we are dedicated to developing cutting-edge
+                technology solutions that empower businesses across various
+                industries. Our team of experts specializes in software
+                development, digital platforms, and IT consulting services. We
+                harness the power of artificial intelligence, cloud computing,
+                and data analytics to create customized solutions that drive
+                efficiency, productivity, and growth for our clients.
+                <br />
+                We provide a range of software solutions, applications, and
+                system integrations with business applications, offering
+                numerous advantages as the software extracts insights from
+                various applications.
+              </motion.p>
+            </motion.header>
+            <motion.img
+              src="/aboutgif.gif"
+              alt="Hero Image"
+              className="w-25 md:w-[600px] rounded"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
+            />
           </div>
-        </section>
-
-        <footer className="bg-gray-800 text-white py-8 text-center">
-          <p>Contact us for all your web development needs!</p>
-        </footer>
+        </div>
       </div>
       <section className="py-12 bg-gray-800 p-10">
         <div className="container mx-auto">
@@ -113,14 +124,14 @@ const AboutPage = () => {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-lg"
+              className="bg-white p-6 rounded-lg shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h3 className="text-xl font-semibold mb-4">Expertise</h3>
+              <h3 className="text-xl font-semibold mb-4 ">Expertise</h3>
               <p>
                 At Nigus Systems, we have a team of highly skilled professionals
                 with years of experience in the field of software development.
@@ -129,7 +140,7 @@ const AboutPage = () => {
               </p>
             </motion.div>
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-lg"
+              className="bg-white p-6 rounded-lg shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: -20 }}
@@ -145,7 +156,7 @@ const AboutPage = () => {
               </p>
             </motion.div>
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-lg"
+              className="bg-white p-6 rounded-lg shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: -20 }}
@@ -163,7 +174,7 @@ const AboutPage = () => {
               </p>
             </motion.div>
             <motion.div
-              className="bg-white p-6 rounded-lg shadow-lg"
+              className="bg-white p-6 rounded-lg shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: -20 }}
@@ -178,6 +189,8 @@ const AboutPage = () => {
               </p>
             </motion.div>
           </div>
+          <TestimonialSection />
+          <CompanyStats />
         </div>
       </section>
     </>
