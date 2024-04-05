@@ -5,17 +5,17 @@ import TestimonialSection from "../components/Testomonial";
 
 // Define an array of objects containing technology names and their corresponding image paths
 const technologies = [
-  { name: "HTML5", image: "/html.jpg" },
-  { name: "CSS3", image: "/css.jpg" },
-  { name: "JavaScript", image: "/js.jpg" },
-  { name: "React", image: "/reactjs.png" },
-  { name: "JQuery", image: "/jquery.png" },
-  { name: "bootstrap", image: "/bootstrap.png" },
-  { name: "mySql", image: "/mysql.png" },
-  { name: "Node.js", image: "/nodejs.png" },
+  { name: "ChatBot Development ", image: "/chatbot.png" },
+  { name: "TensorFlow.", image: "/tensorflow.jpg" },
+  { name: "Natural Language Processing", image: "/NLP.jfif" },
+  { name: "Deep Learning", image: "/DL.jpg" },
+  { name: "IBM watson", image: "/IBM.png" },
+  { name: "Machine Learning", image: "/ML.jpg" },
+  { name: "Natural Language Toolkit", image: "/NLTK.png" },
+  { name: "Keras", image: "/keras.webp" },
 ];
 
-const WebDev = () => {
+const AIML = () => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Trigger the animation only once
     threshold: 0, // Percentage of the section visible before triggering
@@ -24,6 +24,14 @@ const WebDev = () => {
   return (
     <div className=" mt-10 p-5">
       <div className="flex flex-wrap items-center justify-between p-10">
+        <motion.img
+          src="/AIML2.jpg"
+          alt="Hero Image"
+          className="w-25 md:w-[400px] rounded-full"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
+        />
         <motion.header
           className="bg-gray-900 text-white py-8 text-center w-full md:w-1/2 x-5"
           initial={{ opacity: 0, y: -20 }}
@@ -35,7 +43,7 @@ const WebDev = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Elevate Your Online Presence
+            Empower Your Business with Cutting-Edge AIML Development Services
           </motion.h1>
           <motion.p
             className="mt-4"
@@ -43,23 +51,18 @@ const WebDev = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
           >
-            Let our team of skilled developers elevate your online presence to
-            new heights. With a deep understanding of industry trends and
-            cutting-edge technologies, our seasoned developers are poised to
-            transform your digital presence into a compelling force in the
-            online world. From sleek and intuitive website designs to robust and
-            scalable web applications, we specialize in crafting solutions that
-            not only meet but exceed your expectations.
+            Unlock the full potential of artificial intelligence and machine
+            learning with our bespoke AIML development services. From creating
+            intelligent chatbots and virtual assistants to implementing advanced
+            natural language processing algorithms, our team of experts
+            leverages the latest technologies to craft solutions tailored to
+            your unique business needs. With our AIML expertise, enhance
+            customer engagement, streamline operations, and stay ahead in
+            today's competitive landscape. Explore limitless possibilities with
+            our AIML development services and drive your business towards
+            unprecedented success.
           </motion.p>
         </motion.header>
-        <motion.img
-          src="/web_dev.jpg"
-          alt="Hero Image"
-          className="w-25 md:w-[400px] rounded-full"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
-        />
       </div>
 
       <section className="bg-gray-200 py-12" ref={ref}>
@@ -67,7 +70,7 @@ const WebDev = () => {
           <motion.h2
             className="text-2xl font-bold mb-4 text-center"
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
           >
             Technologies We Work With
@@ -103,4 +106,4 @@ const WebDev = () => {
   );
 };
 
-export default WebDev;
+export default AIML;

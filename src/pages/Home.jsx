@@ -7,12 +7,12 @@ import ImageWithSideText from "../components/Callsection";
 
 const Home = () => {
   return (
-    <>
+    <div className=" p-2">
       <HeroSection />
       <OurClientsSection />
       <FeaturesSection />
       <ImageWithSideText />
-    </>
+    </div>
   );
 };
 

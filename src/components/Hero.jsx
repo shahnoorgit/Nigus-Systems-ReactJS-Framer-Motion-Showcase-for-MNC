@@ -46,7 +46,7 @@ const HeroSection = () => {
                 : "image3.jpg"
             }
             alt="Slide"
-            className="w-full h-full max-h-[300px] rounded-lg"
+            className="w-full h-full max-h-[600px] rounded-lg"
           />
         </div>
       </div>

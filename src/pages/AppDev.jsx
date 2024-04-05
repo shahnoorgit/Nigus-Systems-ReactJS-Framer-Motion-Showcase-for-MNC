@@ -5,17 +5,17 @@ import TestimonialSection from "../components/Testomonial";
 
 // Define an array of objects containing technology names and their corresponding image paths
 const technologies = [
-  { name: "HTML5", image: "/html.jpg" },
-  { name: "CSS3", image: "/css.jpg" },
-  { name: "JavaScript", image: "/js.jpg" },
-  { name: "React", image: "/reactjs.png" },
-  { name: "JQuery", image: "/jquery.png" },
-  { name: "bootstrap", image: "/bootstrap.png" },
-  { name: "mySql", image: "/mysql.png" },
-  { name: "Node.js", image: "/nodejs.png" },
+  { name: "Kotlin ", image: "/kotlin.png" },
+  { name: "Flutter", image: "/flutter.jpg" },
+  { name: "Figma (UI)", image: "/figma.png" },
+  { name: "React.Native", image: "/reactN.webp" },
+  { name: "MongoDB", image: "/mongodb.png" },
+  { name: "Swift", image: "/swift.png" },
+  { name: "Java", image: "/java.png" },
+  { name: "Firebase", image: "/Firebase.png" },
 ];
 
-const WebDev = () => {
+const AppDev = () => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Trigger the animation only once
     threshold: 0, // Percentage of the section visible before triggering
@@ -24,6 +24,14 @@ const WebDev = () => {
   return (
     <div className=" mt-10 p-5">
       <div className="flex flex-wrap items-center justify-between p-10">
+        <motion.img
+          src="/App_dev.avif"
+          alt="Hero Image"
+          className="w-25 md:w-[400px] rounded-full"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
+        />
         <motion.header
           className="bg-gray-900 text-white py-8 text-center w-full md:w-1/2 x-5"
           initial={{ opacity: 0, y: -20 }}
@@ -35,7 +43,8 @@ const WebDev = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Elevate Your Online Presence
+            Elevate Your Digital Presence with Innovative App Development
+            Solutions
           </motion.h1>
           <motion.p
             className="mt-4"
@@ -43,23 +52,18 @@ const WebDev = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
           >
-            Let our team of skilled developers elevate your online presence to
-            new heights. With a deep understanding of industry trends and
-            cutting-edge technologies, our seasoned developers are poised to
-            transform your digital presence into a compelling force in the
-            online world. From sleek and intuitive website designs to robust and
-            scalable web applications, we specialize in crafting solutions that
-            not only meet but exceed your expectations.
+            Embark on a transformative journey in the digital realm with our
+            pioneering app development solutions. Harnessing the power of
+            cutting-edge technologies and creative ingenuity, we craft bespoke
+            applications tailored to your unique vision and business objectives.
+            Whether you're looking to conquer the mobile market with intuitive
+            user experiences or revolutionize your industry with groundbreaking
+            functionality, our seasoned team of developers is committed to
+            turning your ideas into reality. Join forces with us and unlock the
+            full potential of your digital aspirations. Let's build the future
+            together.
           </motion.p>
         </motion.header>
-        <motion.img
-          src="/web_dev.jpg"
-          alt="Hero Image"
-          className="w-25 md:w-[400px] rounded-full"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
-        />
       </div>
 
       <section className="bg-gray-200 py-12" ref={ref}>
@@ -67,7 +71,7 @@ const WebDev = () => {
           <motion.h2
             className="text-2xl font-bold mb-4 text-center"
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeIn" }}
           >
             Technologies We Work With
@@ -103,4 +107,4 @@ const WebDev = () => {
   );
 };
 
-export default WebDev;
+export default AppDev;

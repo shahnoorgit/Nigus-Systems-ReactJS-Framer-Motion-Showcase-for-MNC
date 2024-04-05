@@ -6,9 +6,10 @@ const HomeFooter = () => {
       <aside>
         <img className="w-15 h-11" src="/nigus-logo.png" />
         <p className=" text-white">
-          ACME Industries Ltd.
+          Nigus Systems Private Limited
           <br />
-          Providing reliable tech since 1992
+          We work across 24 x 7 to help you run your business without any
+          hassle.
         </p>
       </aside>
       <nav>

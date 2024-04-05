@@ -57,13 +57,19 @@ function Navbar() {
                           Web Development
                         </a>
                         <a
-                          href="#"
+                          href="/services/aiml"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-200 transition duration-300 ease-in-out"
                         >
                           AIML
                         </a>
                         <a
-                          href="#"
+                          href="/services/app_dev"
+                          className="block px-4 py-2 text-gray-800 hover:bg-gray-200 transition duration-300 ease-in-out"
+                        >
+                          App Development
+                        </a>
+                        <a
+                          href="/services/software"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-200 transition duration-300 ease-in-out"
                         >
                           Software Development
@@ -97,7 +103,7 @@ function Navbar() {
                     {isCompany && (
                       <div className="absolute z-10 top-full mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl">
                         <a
-                          href="#"
+                          href="/about_us"
                           className="block px-4 py-2 text-gray-800 hover:bg-gray-200 transition duration-300 ease-in-out"
                         >
                           About US
@@ -187,19 +193,25 @@ function Navbar() {
                   {MisOpen && (
                     <div className="absolute z-30 top-full mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl">
                       <a
-                        href="#"
+                        href="/services/web_dev"
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-200 transition duration-300 ease-in-out"
                       >
                         Web Development
                       </a>
                       <a
-                        href="#"
+                        href="/services/aiml"
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-200 transition duration-300 ease-in-out"
                       >
                         AIML
                       </a>
                       <a
-                        href="#"
+                        href="/services/app_dev"
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-200 transition duration-300 ease-in-out"
+                      >
+                        AppDevelopment
+                      </a>
+                      <a
+                        href="/services/software"
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-200 transition duration-300 ease-in-out"
                       >
                         Software Development
@@ -208,7 +220,7 @@ function Navbar() {
                   )}
                 </div>
                 <a
-                  href="#"
+                  href="/about_us"
                   className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                 >
                   About Us
