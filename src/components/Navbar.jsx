@@ -8,7 +8,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="bg-gray-800 fixed w-full top-0 z-50">
+      <nav className="bg-gray-800 fixed w-full top-0 z-50 ">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
@@ -108,17 +108,11 @@ function Navbar() {
                         >
                           About US
                         </a>
-                        <a
-                          href="#"
-                          className="block px-4 py-2 text-gray-800 hover:bg-gray-200 transition duration-300 ease-in-out"
-                        >
-                          Location
-                        </a>
                       </div>
                     )}
                   </div>
                   <a
-                    href="#"
+                    href="/contact_us"
                     className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                   >
                     Contact
@@ -164,7 +158,7 @@ function Navbar() {
             >
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a
-                  href="#"
+                  href="/"
                   className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                 >
                   Home
@@ -226,7 +220,7 @@ function Navbar() {
                   About Us
                 </a>
                 <a
-                  href="#"
+                  href="/contact_us"
                   className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                 >
                   Contact

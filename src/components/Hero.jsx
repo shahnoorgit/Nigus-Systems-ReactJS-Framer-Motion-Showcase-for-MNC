@@ -29,7 +29,7 @@ const HeroSection = () => {
             applications and integrations
           </p>
           <button className="bg-white text-gray-900 hover:bg-gray-800 hover:text-white py-2 px-6 rounded-full shadow-md transition duration-300">
-            Get Started
+            <a href="/contact_us">Get In Touch</a>
           </button>
         </motion.div>
         <div className="w-full max-w-md md:w-1/2">
