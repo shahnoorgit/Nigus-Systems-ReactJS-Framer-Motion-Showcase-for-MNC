@@ -3,6 +3,16 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TestimonialSection from "../components/Testomonial";
 
+const listVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 // Define an array of objects containing technology names and their corresponding image paths
 const technologies = [
   { name: "Selelium ", image: "/selelium.png" },
@@ -99,9 +109,75 @@ const Software = () => {
         </div>
       </section>
       <TestimonialSection />
-      <footer className="bg-gray-800 text-white py-8 text-center">
-        <p>Contact us for all your web development needs!</p>
-      </footer>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          className="software-development-section bg-gray-200 p-8 rounded-lg shadow-lg"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          <motion.h2
+            className="text-2xl font-bold mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            Software Development
+          </motion.h2>
+          <motion.p
+            className="text-lg mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
+            At our company, we specialize in crafting robust software solutions
+            tailored to your specific needs. Here's why you should choose us for
+            your software development project:
+          </motion.p>
+          <motion.ul
+            className="list-disc ml-6"
+            initial="hidden"
+            animate="visible"
+            variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
+          >
+            <motion.li variants={listVariants} className="mb-4">
+              Experienced Team: Our team consists of seasoned software
+              developers with years of experience in building successful
+              applications across various industries.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Custom Solutions: We understand that every business is unique.
+              That's why we offer customized software development solutions to
+              meet your specific requirements.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Innovative Approach: We stay updated with the latest technologies
+              and trends in the software development landscape, ensuring that
+              your software stands out in the market.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Quality Assurance: Our rigorous quality assurance processes ensure
+              that your software is bug-free, reliable, and meets the highest
+              standards of performance and security.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Scalability: We design software solutions with scalability in
+              mind, ensuring that they can grow with your business and handle
+              increased demand without compromising performance.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Support and Maintenance: Our commitment to post-launch support and
+              maintenance ensures that your software remains up-to-date, secure,
+              and fully functional.
+            </motion.li>
+          </motion.ul>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

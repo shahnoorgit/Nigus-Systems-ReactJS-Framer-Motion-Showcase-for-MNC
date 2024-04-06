@@ -4,6 +4,16 @@ import { useInView } from "react-intersection-observer";
 import TestimonialSection from "../components/Testomonial";
 
 // Define an array of objects containing technology names and their corresponding image paths
+const listVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 const technologies = [
   { name: "HTML5", image: "/html.jpg" },
   { name: "CSS3", image: "/css.jpg" },
@@ -96,9 +106,76 @@ const WebDev = () => {
         </div>
       </section>
       <TestimonialSection />
-      <footer className="bg-gray-800 text-white py-8 text-center">
-        <p>Contact us for all your web development needs!</p>
-      </footer>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          className="web-development-section bg-gray-200 p-8 rounded-lg shadow-lg"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          <motion.h2
+            className="text-2xl font-bold mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            Web Development
+          </motion.h2>
+          <motion.p
+            className="text-lg mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
+            At our company, we specialize in crafting cutting-edge web
+            applications tailored to your specific needs. Here's why you should
+            choose us for your web development project:
+          </motion.p>
+          <motion.ul
+            className="list-disc ml-6"
+            initial="hidden"
+            animate="visible"
+            variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
+          >
+            <motion.li variants={listVariants} className="mb-4">
+              Experienced Team: Our team consists of seasoned web developers
+              with years of experience in building successful applications
+              across various industries.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Custom Solutions: We understand that every business is unique.
+              That's why we offer customized web development solutions to meet
+              your specific requirements.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Innovative Approach: We stay updated with the latest technologies
+              and trends in the web development landscape, ensuring that your
+              web app stands out in the market.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              User-Centric Design: We prioritize user experience in our web
+              development process, creating intuitive and engaging interfaces
+              that keep your users coming back for more.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Quality Assurance: Our rigorous quality assurance processes ensure
+              that your web app is bug-free, reliable, and performs seamlessly
+              across different devices and platforms.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Timely Delivery: We understand the importance of deadlines. With
+              our efficient project management and development process, we
+              ensure timely delivery of your web app without compromising on
+              quality.
+            </motion.li>
+          </motion.ul>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

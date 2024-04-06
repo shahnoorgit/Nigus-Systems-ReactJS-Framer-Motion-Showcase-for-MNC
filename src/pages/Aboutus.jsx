@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import TestimonialSection from "../components/Testomonial";
 import CompanyStats from "../components/Companystats";
+import LocationPage from "../components/Locations";
 
 // Define an array of objects containing technology names and their corresponding image paths
 const technologies = [
@@ -112,6 +113,7 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
+      <LocationPage />
       <section className="py-12 bg-gray-800 p-10">
         <div className="container mx-auto">
           <motion.h2

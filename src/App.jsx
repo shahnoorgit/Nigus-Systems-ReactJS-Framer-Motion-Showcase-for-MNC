@@ -7,6 +7,7 @@ import AIML from "./pages/AIML";
 import AppDev from "./pages/AppDev";
 import Software from "./pages/Software";
 import AboutPage from "./pages/Aboutus";
+import ContactPage from "./pages/ContactPage";
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/services/app_dev" element={<AppDev />} />
         <Route path="/services/software" element={<Software />} />
         <Route path="/about_us" element={<AboutPage />} />
+        <Route path="/contact_us" element={<ContactPage />} />
       </Routes>
       <HomeFooter />
     </>

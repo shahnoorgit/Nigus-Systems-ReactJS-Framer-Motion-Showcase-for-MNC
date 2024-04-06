@@ -4,6 +4,16 @@ import { useInView } from "react-intersection-observer";
 import TestimonialSection from "../components/Testomonial";
 
 // Define an array of objects containing technology names and their corresponding image paths
+const listVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 const technologies = [
   { name: "ChatBot Development ", image: "/chatbot.png" },
   { name: "TensorFlow.", image: "/tensorflow.jpg" },
@@ -99,9 +109,74 @@ const AIML = () => {
         </div>
       </section>
       <TestimonialSection />
-      <footer className="bg-gray-800 text-white py-8 text-center">
-        <p>Contact us for all your web development needs!</p>
-      </footer>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          className="aiml-development-section bg-gray-200 p-8 rounded-lg shadow-lg"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          <motion.h2
+            className="text-2xl font-bold mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            AIML Development
+          </motion.h2>
+          <motion.p
+            className="text-lg mb-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
+            At our company, we specialize in artificial intelligence and machine
+            learning development, harnessing the power of data to drive
+            innovation. Here's why you should choose us for your AIML
+            development project:
+          </motion.p>
+          <motion.ul
+            className="list-disc ml-6"
+            initial="hidden"
+            animate="visible"
+            variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
+          >
+            <motion.li variants={listVariants} className="mb-4">
+              Experienced Team: Our team comprises AI and ML experts with
+              extensive experience in developing cutting-edge solutions across
+              various domains.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Custom Solutions: We tailor our AIML solutions to your specific
+              business needs, ensuring optimal performance and efficiency.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Advanced Algorithms: We leverage advanced algorithms and
+              techniques to deliver AI and ML models that provide valuable
+              insights and predictive capabilities.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Data-driven Approach: Our development process is driven by data,
+              enabling us to build robust models that learn and adapt to
+              changing environments.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Continuous Improvement: We are committed to continuous
+              improvement, refining and optimizing AIML models to deliver
+              maximum value to your business.
+            </motion.li>
+            <motion.li variants={listVariants} className="mb-4">
+              Ethical AI: We adhere to ethical AI principles, ensuring fairness,
+              transparency, and accountability in our AIML solutions.
+            </motion.li>
+          </motion.ul>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
